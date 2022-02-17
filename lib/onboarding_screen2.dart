@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'signup_form.dart';
+import 'NormalButton.dart';
 
 class OnboardingPage extends StatelessWidget {
   static const String id = 'onboarding_page';
@@ -56,20 +58,12 @@ class OnboardingPage extends StatelessWidget {
           SizedBox(
             height: 40.00,
           ),
-          TextButton(
-            style: TextButton.styleFrom(
-              padding: const EdgeInsets.only(
-                  left: 70.0, right: 70.0, bottom: 10.0, top: 10.0),
-              primary: Colors.white,
-              backgroundColor: Color(0xFF2B468b),
-              textStyle: const TextStyle(fontSize: 20.0),
-            ),
-            onPressed: () {},
-            child: const Text(
-              'GET STARTED',
-              style:
-                  TextStyle(fontFamily: "Nunito", fontWeight: FontWeight.w900),
-            ),
+          NormalButton(
+            title: 'GET STARTED',
+            colour: Color(0xFF2B468B),
+            onPressed: () {
+              Navigator.pushNamed(context, SignUpForm.id);
+            },
           ),
         ],
       ),

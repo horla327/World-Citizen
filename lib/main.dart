@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:worldcitizen/onboarding_screen2.dart';
 import 'onboarding_screen1.dart';
+import 'signup_form.dart';
 
 void main() {
   runApp(const WorldCitizen());
@@ -16,6 +17,7 @@ class WorldCitizen extends StatelessWidget {
       routes: {
         OnboardingScreen.id: (context) => const OnboardingScreen(),
         OnboardingPage.id: (context) => const OnboardingPage(),
+        SignUpForm.id: (context) => const SignUpForm(),
       },
     );
   }
