@@ -41,11 +41,17 @@ class _SignUpState extends State<SignUp> {
             SizedBox(
               height: 40.0,
             ),
-            TextBox(hintTitle: 'Your First Name'),
+            TextBox(
+              hintTitle: 'Your First Name',
+              onChanged: () {},
+            ),
             SizedBox(
               height: 20.0,
             ),
-            TextBox(hintTitle: 'Your Last Name'),
+            TextBox(
+              hintTitle: 'Your Last Name',
+              onChanged: () {},
+            ),
             SizedBox(
               height: 200.0,
             ),

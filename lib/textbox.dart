@@ -3,11 +3,15 @@
 import 'package:flutter/material.dart';
 
 class TextBox extends StatelessWidget {
-  const TextBox({required this.hintTitle});
+  const TextBox({required this.hintTitle, required this.onChanged});
   final String hintTitle;
+  final Function onChanged;
   @override
   Widget build(BuildContext context) {
     return TextField(
+      onChanged: (value) {
+        onChanged(value);
+      },
       keyboardType: TextInputType.emailAddress,
       decoration: InputDecoration(
         contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),

@@ -3,8 +3,11 @@ import 'package:worldcitizen/onboarding_screen2.dart';
 import 'package:worldcitizen/signup2.dart';
 import 'onboarding_screen1.dart';
 import 'signup_form.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const WorldCitizen());
 }
 

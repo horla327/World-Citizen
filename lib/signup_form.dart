@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'NormalButton.dart';
 import 'textbox.dart';
 import 'signup2.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class SignUpForm extends StatefulWidget {
   static const String id = 'sign_up_form';
@@ -14,6 +15,10 @@ class SignUpForm extends StatefulWidget {
 }
 
 class _SignUpFormState extends State<SignUpForm> {
+  final _auth = FirebaseAuth.instance;
+  bool showSpinner = false;
+  late String email;
+  late String password;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -90,15 +95,28 @@ class _SignUpFormState extends State<SignUpForm> {
             ),
             TextBox(
               hintTitle: 'Your Email',
+              onChanged: (value) {
+                email = value;
+              },
             ),
             SizedBox(
               height: 20.0,
             ),
-            TextBox(hintTitle: 'Your Pgitgassword'),
+            TextBox(
+              hintTitle: 'Your Password',
+              onChanged: (value) {
+                password = value;
+              },
+            ),
             SizedBox(
               height: 20.0,
             ),
-            TextBox(hintTitle: 'Confirm Password'),
+            TextBox(
+              hintTitle: 'Confirm Password',
+              onChanged: (password) {
+                password = password;
+              },
+            ),
             SizedBox(
               height: 40.0,
             ),
@@ -128,8 +146,23 @@ class _SignUpFormState extends State<SignUpForm> {
             NormalButton(
               title: 'SIGN UP',
               colour: Color(0xFF2B468B),
-              onPressed: () {
-                Navigator.of(context).pushNamed(SignUp.id);
+              onPressed: () async {
+                setState(() {
+                  showSpinner = true;
+                });
+                //Implement registration functionality.
+                try {
+                  final newUser = await _auth.createUserWithEmailAndPassword(
+                      email: email, password: password);
+                  if (newUser != null) {
+                    Navigator.of(context).pushNamed(SignUp.id);
+                  }
+                  setState(() {
+                    showSpinner = false;
+                  });
+                } catch (e) {
+                  print(e);
+                }
               },
             ),
           ],
