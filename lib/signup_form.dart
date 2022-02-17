@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'NormalButton.dart';
+import 'textbox.dart';
+import 'signup2.dart';
 
 class SignUpForm extends StatefulWidget {
   static const String id = 'sign_up_form';
@@ -55,7 +57,10 @@ class _SignUpFormState extends State<SignUpForm> {
                 ),
                 Text(
                   '|',
-                  style: TextStyle(fontSize: 50.0, color: Colors.grey),
+                  style: TextStyle(
+                    fontSize: 50.0,
+                    color: Color(0xFFE5E5E5),
+                  ),
                 ),
                 SizedBox(
                   width: 55.00,
@@ -83,68 +88,17 @@ class _SignUpFormState extends State<SignUpForm> {
             SizedBox(
               height: 40.0,
             ),
-            TextField(
-              keyboardType: TextInputType.emailAddress,
-              decoration: InputDecoration(
-                contentPadding:
-                    EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-                border: OutlineInputBorder(),
-                enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Color(0xFF2B468B), width: 1.0),
-                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                ),
-                hintText: 'Your Email',
-                hintStyle: TextStyle(
-                  fontFamily: 'Nunito',
-                  fontSize: 16.0,
-                  color: Color(0xFF2B468B),
-                ),
-              ),
+            TextBox(
+              hintTitle: 'Your Email',
             ),
             SizedBox(
               height: 20.0,
             ),
-            TextField(
-              decoration: InputDecoration(
-                contentPadding:
-                    EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                ),
-                enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Color(0xFF2B468B), width: 1.0),
-                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                ),
-                hintText: 'Your Password',
-                hintStyle: TextStyle(
-                  fontFamily: 'Nunito',
-                  fontSize: 16.0,
-                  color: Color(0xFF2B468B),
-                ),
-              ),
-            ),
+            TextBox(hintTitle: 'Your Password'),
             SizedBox(
               height: 20.0,
             ),
-            TextField(
-              decoration: InputDecoration(
-                contentPadding:
-                    EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                ),
-                enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Color(0xFF2B468B), width: 1.0),
-                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                ),
-                hintText: 'Confirm Password',
-                hintStyle: TextStyle(
-                  fontFamily: 'Nunito',
-                  fontSize: 16.0,
-                  color: Color(0xFF2B468B),
-                ),
-              ),
-            ),
+            TextBox(hintTitle: 'Confirm Password'),
             SizedBox(
               height: 40.0,
             ),
@@ -154,7 +108,7 @@ class _SignUpFormState extends State<SignUpForm> {
                 style: TextStyle(
                   fontFamily: 'Nunito',
                   fontSize: 16.0,
-                  color: Color(0xFF2B468B),
+                  color: Colors.black,
                 ),
               ),
             ),
@@ -175,7 +129,7 @@ class _SignUpFormState extends State<SignUpForm> {
               title: 'SIGN UP',
               colour: Color(0xFF2B468B),
               onPressed: () {
-                Navigator.pushNamed(context, SignUpForm.id);
+                Navigator.of(context).pushNamed(SignUp.id);
               },
             ),
           ],

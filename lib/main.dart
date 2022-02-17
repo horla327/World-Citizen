@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:worldcitizen/onboarding_screen2.dart';
+import 'package:worldcitizen/signup2.dart';
 import 'onboarding_screen1.dart';
 import 'signup_form.dart';
 
@@ -18,6 +19,7 @@ class WorldCitizen extends StatelessWidget {
         OnboardingScreen.id: (context) => const OnboardingScreen(),
         OnboardingPage.id: (context) => const OnboardingPage(),
         SignUpForm.id: (context) => const SignUpForm(),
+        SignUp.id: (context) => const SignUp(),
       },
     );
   }
