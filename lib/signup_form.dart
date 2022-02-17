@@ -94,7 +94,7 @@ class _SignUpFormState extends State<SignUpForm> {
             SizedBox(
               height: 20.0,
             ),
-            TextBox(hintTitle: 'Your Password'),
+            TextBox(hintTitle: 'Your Pgitgassword'),
             SizedBox(
               height: 20.0,
             ),

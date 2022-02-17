@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "331176630159",
+    "project_id": "world-citizen-47bf6",
+    "storage_bucket": "world-citizen-47bf6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:331176630159:android:d8a80a9c5376764e9cddfa",
+        "android_client_info": {
+          "package_name": "com.example.world_citizen"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "331176630159-l3qqfo95a787415s4aa49cmb15h9vjmf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOqc-WWmFbFYxnvu3qAipwcVIisLQWCas"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "331176630159-l3qqfo95a787415s4aa49cmb15h9vjmf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
