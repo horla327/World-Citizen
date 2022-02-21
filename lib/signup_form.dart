@@ -5,6 +5,8 @@ import 'NormalButton.dart';
 import 'textbox.dart';
 import 'signup2.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:email_validator/email_validator.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class SignUpForm extends StatefulWidget {
   static const String id = 'sign_up_form';
