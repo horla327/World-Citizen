@@ -6,7 +6,7 @@ import 'textbox.dart';
 import 'signup2.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:email_validator/email_validator.dart';
-import 'package:fluttertoast/fluttertoast.dart';
+import 'package:flutter_pw_validator/flutter_pw_validator.dart';
 
 class SignUpForm extends StatefulWidget {
   static const String id = 'sign_up_form';
@@ -17,6 +17,7 @@ class SignUpForm extends StatefulWidget {
 }
 
 class _SignUpFormState extends State<SignUpForm> {
+  bool isValid = false;
   final _auth = FirebaseAuth.instance;
   bool showSpinner = false;
   late String email;
@@ -98,8 +99,11 @@ class _SignUpFormState extends State<SignUpForm> {
             TextBox(
               hintTitle: 'Your Email',
               onChanged: (value) {
-                email = value;
+                setState(() {
+                  isValid = EmailValidator.validate(value);
+                });
               },
+              errorTitle: isValid ? '' : 'Please enter a valid email address',
             ),
             SizedBox(
               height: 20.0,
@@ -109,6 +113,7 @@ class _SignUpFormState extends State<SignUpForm> {
               onChanged: (value) {
                 password = value;
               },
+              errorTitle: 'err',
             ),
             SizedBox(
               height: 20.0,
@@ -118,6 +123,7 @@ class _SignUpFormState extends State<SignUpForm> {
               onChanged: (password) {
                 password = password;
               },
+              errorTitle: 'err',
             ),
             SizedBox(
               height: 40.0,

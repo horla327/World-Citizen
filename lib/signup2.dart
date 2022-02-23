@@ -44,6 +44,7 @@ class _SignUpState extends State<SignUp> {
             TextBox(
               hintTitle: 'Your First Name',
               onChanged: () {},
+              errorTitle: '',
             ),
             SizedBox(
               height: 20.0,
@@ -51,6 +52,7 @@ class _SignUpState extends State<SignUp> {
             TextBox(
               hintTitle: 'Your Last Name',
               onChanged: () {},
+              errorTitle: '',
             ),
             SizedBox(
               height: 200.0,
