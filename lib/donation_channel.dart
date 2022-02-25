@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:worldcitizen/NormalButton.dart';
+import 'package:worldcitizen/welcome_page.dart';
 
 class DonationChannel extends StatelessWidget {
   static const String id = 'donation_channel';
@@ -21,11 +22,14 @@ class DonationChannel extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Icon(
-                  Icons.arrow_back_ios_new,
+                IconButton(
+                  icon: Icon(Icons.arrow_back_ios_new),
                   color: Color(0xFF2B468B),
+                  onPressed: () {
+                    Navigator.pushNamed(context, WelcomePage.id);
+                  },
                 ),
-                Container(
+                SizedBox(
                   child: Image.asset('images/Group 2.png'),
                   height: 90.00,
                   width: 90.00,

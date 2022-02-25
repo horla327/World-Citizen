@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:worldcitizen/welcome_page.dart';
 import 'textbox.dart';
 import 'NormalButton.dart';
 
@@ -19,49 +20,54 @@ class _SignUpState extends State<SignUp> {
       backgroundColor: Colors.white,
       body: Padding(
         padding: const EdgeInsets.all(30.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Container(
-              child: Image.asset('images/Group 2.png'),
-              height: 100.0,
-              width: 100.0,
-            ),
-            SizedBox(
-              height: 50.0,
-            ),
-            Text(
-              'What Should We Call You?',
-              style: TextStyle(
-                  fontFamily: 'Nunito',
-                  fontSize: 24.0,
-                  fontWeight: FontWeight.w600),
-            ),
-            SizedBox(
-              height: 40.0,
-            ),
-            // TextBox(
-            //   hintTitle: 'Your First Name',
-            //   onChanged: () {},
-            //   errorTitle: '',
-            //   labelTitle: '',
-            // ),
-            // SizedBox(
-            //   height: 20.0,
-            // ),
-            // TextBox(
-            //   hintTitle: 'Your Last Name',
-            //   onChanged: () {},
-            //   errorTitle: '',
-            //   labelTitle: '',
-            // ),
-            SizedBox(
-              height: 200.0,
-            ),
-            NormalButton(
-                title: 'PROCEED', colour: Color(0xFF2B468B), onPressed: () {}),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SizedBox(
+                child: Image.asset('images/Group 2.png'),
+                height: 100.0,
+                width: 100.0,
+              ),
+              SizedBox(
+                height: 70.0,
+              ),
+              Text(
+                'What Should We Call You?',
+                style: TextStyle(
+                    fontFamily: 'Nunito',
+                    fontSize: 24.0,
+                    fontWeight: FontWeight.w600),
+              ),
+              SizedBox(
+                height: 60.0,
+              ),
+              TextInputWidget(
+                obscure: false,
+                hintText: "Your First Name",
+                lableText: "Your First Name",
+              ),
+              SizedBox(
+                height: 30.0,
+              ),
+              TextInputWidget(
+                obscure: false,
+                hintText: "Last Name",
+                lableText: "Your Last Name",
+              ),
+              SizedBox(
+                height: 200.0,
+              ),
+              NormalButton(
+                title: 'PROCEED',
+                colour: Color(0xFF2B468B),
+                onPressed: () {
+                  Navigator.pushNamed(context, WelcomePage.id);
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );

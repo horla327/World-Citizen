@@ -168,6 +168,32 @@ class _SignUpFormState extends State<SignInForm> {
                   ],
                 ),
                 SizedBox(
+                  height: 30.0,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(top: 16),
+                      child: Text(
+                        'Remember Me',
+                        style: TextStyle(
+                          fontFamily: 'Nunito',
+                          fontSize: 16.0,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ),
+                    IconButton(
+                      icon: Icon(Icons.toggle_on),
+                      color: Color(0xFF2B468B),
+                      iconSize: 50.00,
+                      onPressed: () {},
+                    ),
+                  ],
+                ),
+                SizedBox(
                   height: 70.0,
                 ),
                 NormalButton(

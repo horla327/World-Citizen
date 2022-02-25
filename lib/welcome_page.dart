@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:worldcitizen/reuseable_card.dart';
+import 'package:worldcitizen/donation_channel.dart';
 import 'NormalButton.dart';
 
 class WelcomePage extends StatelessWidget {
@@ -105,7 +105,11 @@ class WelcomePage extends StatelessWidget {
                 fontFamily: 'Nunito', fontSize: 16.0, color: Colors.white),
           ),
           NormalButton(
-              title: 'PROCEED', colour: Color(0xFF2B468B), onPressed: () {})
+              title: 'PROCEED',
+              colour: Color(0xFF2B468B),
+              onPressed: () {
+                Navigator.pushNamed(context, DonationChannel.id);
+              })
         ],
       ),
     );
