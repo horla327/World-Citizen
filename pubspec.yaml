@@ -50,6 +50,7 @@ dev_dependencies:
   email_validator: ^2.0.1
   fluttertoast: ^8.0.8
   flutter_pw_validator: ^1.4.1
+  provider: ^6.0.2
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

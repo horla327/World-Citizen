@@ -5,6 +5,7 @@ import 'package:worldcitizen/signup2.dart';
 import 'package:worldcitizen/welcome_page.dart';
 import 'onboarding_screen1.dart';
 import 'signup_form.dart';
+import 'sign_in.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 void main() async {
@@ -24,6 +25,7 @@ class WorldCitizen extends StatelessWidget {
         OnboardingScreen.id: (context) => const OnboardingScreen(),
         OnboardingPage.id: (context) => const OnboardingPage(),
         SignUpForm.id: (context) => const SignUpForm(),
+        SignInForm.id: (context) => const SignInForm(),
         SignUp.id: (context) => const SignUp(),
         WelcomePage.id: (context) => const WelcomePage(),
         DonationChannel.id: (context) => const DonationChannel(),
