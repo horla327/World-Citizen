@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:worldcitizen/donation_channel.dart';
 import 'NormalButton.dart';
+import 'pickup_location.dart';
 
 class DonateNearby extends StatelessWidget {
   static const String id = 'donate_nearby';
@@ -139,7 +140,9 @@ class DonateNearby extends StatelessWidget {
                         child: NormalButton(
                             title: 'FIND',
                             colour: Color(0xFF2B468B),
-                            onPressed: () {}),
+                            onPressed: () {
+                              Navigator.pushNamed(context, PickupLocation.id);
+                            }),
                       ),
                     ],
                   ),

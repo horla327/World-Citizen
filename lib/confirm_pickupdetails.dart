@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:worldcitizen/NormalButton.dart';
+import 'package:worldcitizen/donate_nearby2.dart';
 import 'package:worldcitizen/pickup_details.dart';
 
 class ConfirmPickUpDetails extends StatelessWidget {
@@ -124,7 +125,9 @@ class ConfirmPickUpDetails extends StatelessWidget {
             NormalButton(
                 title: "CONFIRM & SCHEDULE",
                 colour: Color(0xFF2B468B),
-                onPressed: () {}),
+                onPressed: () {
+                  Navigator.pushNamed(context, DonateNearbyRate.id);
+                }),
           ],
         ),
       ),

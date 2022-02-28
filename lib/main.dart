@@ -25,7 +25,7 @@ class WorldCitizen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: DonationChannel.id,
+      initialRoute: OnboardingScreen.id,
       routes: {
         OnboardingScreen.id: (context) => const OnboardingScreen(),
         OnboardingPage.id: (context) => const OnboardingPage(),

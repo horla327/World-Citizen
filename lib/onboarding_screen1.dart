@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, unnecessary_const, prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:worldcitizen/onboarding_screen2.dart';
 
 class OnboardingScreen extends StatelessWidget {
   static const String id = 'onboarding_screen';
@@ -27,12 +28,17 @@ class OnboardingScreen extends StatelessWidget {
                   color: Colors.white,
                 ),
               ),
-              const Text(
-                'Citizen',
-                style: TextStyle(
-                  fontFamily: 'Montserrat',
-                  fontSize: 35.0,
-                  color: Color(0xFFE78B38),
+              TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, OnboardingPage.id);
+                },
+                child: Text(
+                  'Citizen',
+                  style: TextStyle(
+                    fontFamily: 'Montserrat',
+                    fontSize: 35.0,
+                    color: Color(0xFFE78B38),
+                  ),
                 ),
               ),
             ],
