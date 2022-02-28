@@ -2,18 +2,31 @@
 
 import 'package:flutter/material.dart';
 import 'package:worldcitizen/NormalButton.dart';
+import 'package:worldcitizen/donate_nearby.dart';
 import 'package:worldcitizen/welcome_page.dart';
 
-class DonationChannel extends StatelessWidget {
+import 'donate_nearby2.dart';
+import 'pickup_location.dart';
+
+class DonationChannel extends StatefulWidget {
   static const String id = 'donation_channel';
   const DonationChannel({Key? key}) : super(key: key);
+
+  @override
+  State<DonationChannel> createState() => _DonationChannelState();
+}
+
+class _DonationChannelState extends State<DonationChannel> {
+  bool _hasBeenPressed = false;
+  bool _hasBeenPressed1 = false;
+  bool _hasBeenPressed2 = false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Padding(
-        padding: const EdgeInsets.all(30.0),
+        padding: const EdgeInsets.all(22.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -53,16 +66,23 @@ class DonationChannel extends StatelessWidget {
             ),
             Row(
               children: [
-                Icon(
-                  Icons.check_circle,
-                  color: Color(0xFF2B468B),
+                IconButton(
+                  onPressed: () {
+                    setState(() {
+                      _hasBeenPressed = !_hasBeenPressed;
+                    });
+                  },
+                  icon: Icon(Icons.circle),
+                  color:
+                      _hasBeenPressed ? Color(0xFF2B468B) : Color(0xFFEAE9E9),
+                  iconSize: 20,
                 ),
                 SizedBox(
-                  width: 30.0,
+                  width: 25.0,
                 ),
                 Image.asset('images/Vector (4).png'),
                 SizedBox(
-                  width: 30.0,
+                  width: 25.0,
                 ),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -108,16 +128,23 @@ class DonationChannel extends StatelessWidget {
             ),
             Row(
               children: [
-                Icon(
-                  Icons.check_circle,
-                  color: Color(0xFF2B468B),
+                IconButton(
+                  onPressed: () {
+                    setState(() {
+                      _hasBeenPressed1 = !_hasBeenPressed1;
+                    });
+                  },
+                  icon: Icon(Icons.circle),
+                  color:
+                      _hasBeenPressed1 ? Color(0xFF2B468B) : Color(0xFFEAE9E9),
+                  iconSize: 20,
                 ),
                 SizedBox(
-                  width: 30.0,
+                  width: 25.0,
                 ),
                 Image.asset('images/Vector (2).png'),
                 SizedBox(
-                  width: 30.0,
+                  width: 25.0,
                 ),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -163,16 +190,23 @@ class DonationChannel extends StatelessWidget {
             ),
             Row(
               children: [
-                Icon(
-                  Icons.check_circle,
-                  color: Color(0xFF2B468B),
+                IconButton(
+                  onPressed: () {
+                    setState(() {
+                      _hasBeenPressed2 = !_hasBeenPressed2;
+                    });
+                  },
+                  icon: Icon(Icons.circle),
+                  color:
+                      _hasBeenPressed2 ? Color(0xFF2B468B) : Color(0xFFEAE9E9),
+                  iconSize: 20,
                 ),
                 SizedBox(
-                  width: 30.0,
+                  width: 25.0,
                 ),
                 Image.asset('images/Vector (3).png'),
                 SizedBox(
-                  width: 30.0,
+                  width: 25.0,
                 ),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -222,7 +256,17 @@ class DonationChannel extends StatelessWidget {
             ),
             SizedBox(height: 30.0),
             NormalButton(
-                title: 'NEXT', colour: Color(0xFF2B468B), onPressed: () {}),
+                title: 'NEXT',
+                colour: Color(0xFF2B468B),
+                onPressed: () {
+                  if (_hasBeenPressed == true) {
+                    Navigator.pushNamed(context, DonateNearby.id);
+                  } else if (_hasBeenPressed1 == true) {
+                    Navigator.pushNamed(context, PickupLocation.id);
+                  } else if (_hasBeenPressed2 == true) {
+                    Navigator.pushNamed(context, DonateNearbyRate.id);
+                  }
+                }),
           ],
         ),
       ),

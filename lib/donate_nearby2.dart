@@ -97,7 +97,7 @@ class DonateNearbyRate extends StatelessWidget {
             ),
             Material(
               elevation: 2.0,
-              shadowColor: Color(0xFF3E3A3A),
+              shadowColor: Color(0xFFEAE9E9),
               child: Container(
                 color: Color(0xFFEAE9E9),
                 child: TextField(
