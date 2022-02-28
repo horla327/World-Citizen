@@ -3,6 +3,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:worldcitizen/pickup_details.dart';
 import 'NormalButton.dart';
 import 'donation_channel.dart';
 
@@ -144,7 +145,9 @@ class _PickupLocationState extends State<PickupLocation> {
                 topRight: Radius.circular(10),
               ),
               child: MaterialButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, PickUpDetails.id);
+                },
                 minWidth: 400.0,
                 height: 60.0,
                 child: Text(

@@ -9,6 +9,8 @@ import 'onboarding_screen1.dart';
 import 'signup_form.dart';
 import 'sign_in.dart';
 import 'donate_nearby2.dart';
+import 'pickup_details.dart';
+import 'confirm_pickupdetails.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 void main() async {
@@ -35,6 +37,8 @@ class WorldCitizen extends StatelessWidget {
         DonateNearby.id: (context) => const DonateNearby(),
         DonateNearbyRate.id: (context) => const DonateNearbyRate(),
         PickupLocation.id: (context) => const PickupLocation(),
+        PickUpDetails.id: (context) => const PickUpDetails(),
+        ConfirmPickUpDetails.id: (context) => const ConfirmPickUpDetails(),
       },
     );
   }
