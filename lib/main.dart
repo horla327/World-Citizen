@@ -32,7 +32,7 @@ class WorldCitizen extends StatelessWidget {
         SignUpForm.id: (context) => const SignUpForm(),
         SignInForm.id: (context) => const SignInForm(),
         SignUp.id: (context) => const SignUp(),
-        WelcomePage.id: (context) => const WelcomePage(),
+        WelcomePage.id: (context) => WelcomePage(""),
         DonationChannel.id: (context) => const DonationChannel(),
         DonateNearby.id: (context) => const DonateNearby(),
         DonateNearbyRate.id: (context) => const DonateNearbyRate(),

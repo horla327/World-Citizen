@@ -11,7 +11,7 @@ class TextInputWidget extends StatelessWidget {
   final TextInputType? textInputType;
   final bool obscure;
   final bool? isPasswordTextField;
-  final TextEditingController? textEditingController;
+  final TextEditingController textEditingController;
   final int? inputLimit;
 
   final TextInputFormatter? inputFormatter;
@@ -29,7 +29,7 @@ class TextInputWidget extends StatelessWidget {
       this.textInputType,
       required this.obscure,
       this.isPasswordTextField,
-      this.textEditingController,
+      required this.textEditingController,
       this.inputLimit,
       this.inputFormatter,
       this.readOnly,

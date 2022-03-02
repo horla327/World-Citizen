@@ -3,11 +3,20 @@
 import 'package:flutter/material.dart';
 import 'package:worldcitizen/donation_channel.dart';
 import 'NormalButton.dart';
+import 'signup2.dart';
 
-class WelcomePage extends StatelessWidget {
+class WelcomePage extends StatefulWidget {
+  final String mydata;
+  WelcomePage(this.mydata);
   static const String id = 'welcome_page';
-  const WelcomePage({Key? key}) : super(key: key);
 
+  @override
+  State<WelcomePage> createState() => _WelcomePageState(this.mydata);
+}
+
+class _WelcomePageState extends State<WelcomePage> {
+  String mydata;
+  _WelcomePageState(this.mydata);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,7 +37,7 @@ class WelcomePage extends StatelessWidget {
             ),
           ),
           Text(
-            "Hi, Mary!",
+            "Hi, $mydata!",
             style: TextStyle(
                 fontFamily: 'Nunito',
                 fontSize: 30.0,
@@ -102,7 +111,9 @@ class WelcomePage extends StatelessWidget {
           Text(
             "Let's do this",
             style: TextStyle(
-                fontFamily: 'Nunito', fontSize: 16.0, color: Colors.white),
+              fontFamily: 'Nunito',
+              fontSize: 16.0,
+            ),
           ),
           NormalButton(
               title: 'PROCEED',

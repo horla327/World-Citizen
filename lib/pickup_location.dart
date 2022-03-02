@@ -6,6 +6,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:worldcitizen/pickup_details.dart';
 import 'NormalButton.dart';
 import 'donation_channel.dart';
+import 'package:address_search_field/address_search_field.dart';
 
 class PickupLocation extends StatefulWidget {
   static const String id = 'pickup_location';
@@ -84,7 +85,7 @@ class _PickupLocationState extends State<PickupLocation> {
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(10.0)),
                               ),
-                              labelText: 'Ajose Street, Maryland',
+                              labelText: 'Address',
                               labelStyle: TextStyle(
                                 fontFamily: 'Nunito',
                                 fontSize: 16.0,
@@ -112,7 +113,7 @@ class _PickupLocationState extends State<PickupLocation> {
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(10.0)),
                               ),
-                              labelText: '32',
+                              labelText: 'No',
                               labelStyle: TextStyle(
                                 fontFamily: 'Nunito',
                                 fontSize: 16.0,
