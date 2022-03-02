@@ -13,14 +13,14 @@ class TextInputWidget extends StatelessWidget {
   final bool? isPasswordTextField;
   final TextEditingController textEditingController;
   final int? inputLimit;
-
   final TextInputFormatter? inputFormatter;
   final bool? readOnly;
   final int? maxLines;
   final Widget? prefix;
   final Widget? suffixWidget;
   final String? suffixText;
-  final Function? validateFunction;
+  final String? Function(String?)? validator;
+  final Function? onChanged;
   final TextInputAction? textInputAction;
   const TextInputWidget(
       {Key? key,
@@ -37,7 +37,8 @@ class TextInputWidget extends StatelessWidget {
       this.prefix,
       this.suffixWidget,
       this.suffixText,
-      this.validateFunction,
+      this.validator,
+      this.onChanged,
       this.textInputAction})
       : super(key: key);
 
@@ -48,12 +49,8 @@ class TextInputWidget extends StatelessWidget {
       keyboardType: textInputType,
       obscureText: obscure,
       controller: textEditingController,
-      validator: (value) {
-        if (value == null || value.isEmpty) {
-          return 'Please enter some text';
-        }
-        return null;
-      },
+      validator: validator,
+      onChanged: (value) {},
       decoration: new InputDecoration(
         suffixIcon: suffixWidget,
         counterText: "",

@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, import_of_legacy_library_into_null_safe
 
 import 'package:flutter/material.dart';
 import 'package:worldcitizen/welcome_page.dart';
@@ -66,9 +66,9 @@ class _SignUpState extends State<SignUp> {
                     obscure: false,
                     hintText: "Your First Name",
                     lableText: "Your First Name",
-                    validateFunction: (value) {
+                    validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return 'Please enter some text';
+                        return 'Please enter your first name';
                       }
                       return null;
                     },
@@ -81,9 +81,9 @@ class _SignUpState extends State<SignUp> {
                     obscure: false,
                     hintText: "Last Name",
                     lableText: "Your Last Name",
-                    validateFunction: (value) {
+                    validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return 'Please enter some text';
+                        return 'Please enter your last name text';
                       }
                       return null;
                     },

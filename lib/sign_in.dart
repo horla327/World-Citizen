@@ -124,13 +124,6 @@ class _SignUpFormState extends State<SignInForm> {
                   obscure: false,
                   hintText: "Your Email",
                   lableText: "Your Email",
-                  validateFunction: (String value) {
-                    final bool isValid = EmailValidator.validate(value);
-                    if (isValid) {
-                      return null;
-                    }
-                    return "Email is not valid";
-                  },
                 ),
                 SizedBox(
                   height: 25.0,
