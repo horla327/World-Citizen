@@ -15,71 +15,71 @@ class DonateNearby extends StatelessWidget {
       backgroundColor: Colors.white,
       body: Padding(
         padding: const EdgeInsets.all(30.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                IconButton(
-                  icon: Icon(Icons.arrow_back_ios_new),
-                  color: Color(0xFF2B468B),
-                  onPressed: () {
-                    Navigator.pushNamed(context, DonationChannel.id);
-                  },
-                ),
-                Text(
-                  'Donate Nearby',
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  IconButton(
+                    icon: Icon(Icons.arrow_back_ios_new),
+                    color: Color(0xFF2B468B),
+                    onPressed: () {
+                      Navigator.pushNamed(context, DonationChannel.id);
+                    },
+                  ),
+                  Text(
+                    'Donate Nearby',
+                    style: TextStyle(
+                      fontFamily: 'Nunito',
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.w900,
+                      color: Color(0xFF2B468B),
+                    ),
+                  ),
+                  Image.asset('images/Group 34.png'),
+                ],
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              Center(
+                child: Text(
+                  "Discover collection centers near you",
                   style: TextStyle(
                     fontFamily: 'Nunito',
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.w900,
-                    color: Color(0xFF2B468B),
+                    fontSize: 16.0,
+                    fontWeight: FontWeight.w400,
                   ),
                 ),
-                Image.asset('images/Group 34.png'),
-              ],
-            ),
-            SizedBox(
-              height: 30,
-            ),
-            Center(
-              child: Text(
-                "Discover collection centers near you",
-                style: TextStyle(
-                  fontFamily: 'Nunito',
-                  fontSize: 16.0,
-                  fontWeight: FontWeight.w400,
+              ),
+              Center(
+                child: Text(
+                  "and we'd do all the work for you",
+                  style: TextStyle(
+                    fontFamily: 'Nunito',
+                    fontSize: 16.0,
+                    fontWeight: FontWeight.w400,
+                  ),
                 ),
               ),
-            ),
-            Center(
-              child: Text(
-                "and we'd do all the work for you",
-                style: TextStyle(
-                  fontFamily: 'Nunito',
-                  fontSize: 16.0,
-                  fontWeight: FontWeight.w400,
-                ),
+              SizedBox(
+                height: 30,
               ),
-            ),
-            SizedBox(
-              height: 30,
-            ),
-            Row(
-              children: [
-                IconButton(
-                  icon: Icon(Icons.location_on),
-                  color: Color(0xFF2B468B),
-                  iconSize: 50,
-                  onPressed: () {
-                    Navigator.pushNamed(context, DonationChannel.id);
-                  },
-                ),
-                SingleChildScrollView(
-                  child: Column(
+              Row(
+                children: [
+                  IconButton(
+                    icon: Icon(Icons.location_on),
+                    color: Color(0xFF2B468B),
+                    iconSize: 50,
+                    onPressed: () {
+                      Navigator.pushNamed(context, DonationChannel.id);
+                    },
+                  ),
+                  Column(
                     children: [
                       SizedBox(
                         width: 220,
@@ -146,24 +146,24 @@ class DonateNearby extends StatelessWidget {
                       ),
                     ],
                   ),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 40,
-            ),
-            Text(
-              'Available Centres',
-              style: TextStyle(
-                fontFamily: 'Nunito',
-                fontSize: 20.0,
-                fontWeight: FontWeight.w900,
+                ],
               ),
-            ),
-            SizedBox(
-              height: 200,
-            ),
-          ],
+              SizedBox(
+                height: 40,
+              ),
+              Text(
+                'Available Centres',
+                style: TextStyle(
+                  fontFamily: 'Nunito',
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.w900,
+                ),
+              ),
+              SizedBox(
+                height: 200,
+              ),
+            ],
+          ),
         ),
       ),
     );

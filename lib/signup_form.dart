@@ -20,10 +20,9 @@ class SignUpForm extends StatefulWidget {
 }
 
 class _SignUpFormState extends State<SignUpForm> {
-  bool showSpinner = false;
-  late String email;
-  late String password;
   final _auth = FirebaseAuth.instance;
+  bool showSpinner = false;
+
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
@@ -137,9 +136,7 @@ class _SignUpFormState extends State<SignUpForm> {
                       }
                       return "Please enter a valid email address";
                     },
-                    onChanged: (value) {
-                      email = value;
-                    },
+                    onChanged: (value) {},
                   ),
                   SizedBox(
                     height: 25.0,
@@ -158,9 +155,7 @@ class _SignUpFormState extends State<SignUpForm> {
                         return null;
                       }
                     },
-                    onChanged: (value) {
-                      password = value;
-                    },
+                    onChanged: (value) {},
                   ),
                   SizedBox(
                     height: 25.0,
@@ -225,17 +220,28 @@ class _SignUpFormState extends State<SignUpForm> {
                     title: 'SIGN UP',
                     colour: Color(0xFF2B468B),
                     onPressed: () async {
+                      if (!formKey.currentState!.validate()) {
+                        return;
+                      }
+
                       setState(() {
                         showSpinner = true;
                       });
-                      if (formKey.currentState!.validate()) {
-                        Navigator.pushNamed(context, SignUp.id);
-                      }
-                      Future.delayed(Duration(seconds: 4), () {
+
+                      try {
+                        final newUser =
+                            await _auth.createUserWithEmailAndPassword(
+                                email: _emailController.text.trim(),
+                                password: _passwordController.text.trim());
+                        if (newUser != null) {
+                          Navigator.pushNamed(context, SignUp.id);
+                        }
                         setState(() {
                           showSpinner = false;
                         });
-                      });
+                      } catch (e) {
+                        print(e);
+                      }
                     },
                   ),
                 ],
