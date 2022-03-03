@@ -2,14 +2,11 @@
 
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:worldcitizen/donation_channel.dart';
 import 'NormalButton.dart';
 import 'signup_form.dart';
-import 'signup2.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:email_validator/email_validator.dart';
 import 'textbox.dart';
-import 'constants.dart';
-import 'app_styles.dart';
 
 class SignInForm extends StatefulWidget {
   static const String id = 'sign_in_form';
@@ -21,6 +18,7 @@ class SignInForm extends StatefulWidget {
 
 class _SignUpFormState extends State<SignInForm> {
   final _auth = FirebaseAuth.instance;
+  bool showSpinner = false;
   GlobalKey<FormState> formkey = GlobalKey<FormState>();
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
@@ -148,7 +146,12 @@ class _SignUpFormState extends State<SignInForm> {
                       ),
                     ),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Future<void> resetPassword(String email) async {
+                          await _auth.sendPasswordResetEmail(
+                              email: _emailController.text.trim());
+                        }
+                      },
                       child: Text(
                         "Reset",
                         style: TextStyle(
@@ -190,12 +193,26 @@ class _SignUpFormState extends State<SignInForm> {
                   height: 70.0,
                 ),
                 NormalButton(
-                  title: 'SIGN IN',
-                  colour: Color(0xFF2B468B),
-                  onPressed: () {
-                    Navigator.pushNamed(context, SignUp.id);
-                  },
-                ),
+                    title: 'SIGN IN',
+                    colour: Color(0xFF2B468B),
+                    onPressed: () async {
+                      setState(() {
+                        showSpinner = true;
+                      });
+                      try {
+                        final user = await _auth.signInWithEmailAndPassword(
+                            email: _emailController.text.trim(),
+                            password: _passwordController.text.trim());
+                        if (user != null) {
+                          Navigator.pushNamed(context, DonationChannel.id);
+                        }
+                        setState(() {
+                          showSpinner = false;
+                        });
+                      } catch (e) {
+                        print(e);
+                      }
+                    }),
               ],
             ),
           ),
