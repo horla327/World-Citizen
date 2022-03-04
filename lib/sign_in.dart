@@ -2,6 +2,7 @@
 
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:worldcitizen/ResetScreen.dart';
 import 'package:worldcitizen/donation_channel.dart';
 import 'NormalButton.dart';
 import 'signup_form.dart';
@@ -147,10 +148,7 @@ class _SignUpFormState extends State<SignInForm> {
                     ),
                     TextButton(
                       onPressed: () {
-                        Future<void> resetPassword(String email) async {
-                          await _auth.sendPasswordResetEmail(
-                              email: _emailController.text.trim());
-                        }
+                        Navigator.pushNamed(context, ResetScreen.id);
                       },
                       child: Text(
                         "Reset",

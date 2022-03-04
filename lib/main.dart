@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:worldcitizen/ResetScreen.dart';
 import 'package:worldcitizen/donate_nearby.dart';
 import 'package:worldcitizen/donation_channel.dart';
 import 'package:worldcitizen/onboarding_screen2.dart';
@@ -39,6 +40,7 @@ class WorldCitizen extends StatelessWidget {
         PickupLocation.id: (context) => const PickupLocation(),
         PickUpDetails.id: (context) => const PickUpDetails(),
         ConfirmPickUpDetails.id: (context) => const ConfirmPickUpDetails(),
+        ResetScreen.id: (context) => const ResetScreen(),
       },
     );
   }
