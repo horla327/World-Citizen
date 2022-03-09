@@ -3,10 +3,11 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:worldcitizen/location_service.dart';
 import 'package:worldcitizen/pickup_details.dart';
 import 'NormalButton.dart';
 import 'donation_channel.dart';
-import 'package:address_search_field/address_search_field.dart';
+import 'package:http/http.dart' as http;
 
 class PickupLocation extends StatefulWidget {
   static const String id = 'pickup_location';
@@ -18,6 +19,7 @@ class PickupLocation extends StatefulWidget {
 
 class _PickupLocationState extends State<PickupLocation> {
   Completer<GoogleMapController> _controller = Completer();
+  TextEditingController _searchController = TextEditingController();
   static const LatLng _center = const LatLng(6.57111, 3.37167);
 
   void _onMapCreated(GoogleMapController controller) {
@@ -77,6 +79,7 @@ class _PickupLocationState extends State<PickupLocation> {
                           shadowColor: Color(0xFF3E3A3A),
                           child: TextField(
                             obscureText: false,
+                            controller: _searchController,
                             decoration: InputDecoration(
                               border: OutlineInputBorder(),
                               enabledBorder: OutlineInputBorder(
@@ -91,6 +94,7 @@ class _PickupLocationState extends State<PickupLocation> {
                                 fontSize: 16.0,
                               ),
                             ),
+                            onChanged: (value) {},
                           ),
                         ),
                       ),
@@ -128,7 +132,11 @@ class _PickupLocationState extends State<PickupLocation> {
                         child: NormalButton(
                             title: 'NEXT',
                             colour: Color(0xFF2B468B),
-                            onPressed: () {}),
+                            onPressed: () async {
+                              var place = await LocationService()
+                                  .getPlace(_searchController.text);
+                              goToPlace(place);
+                            }),
                       ),
                     ],
                   ),
@@ -164,6 +172,17 @@ class _PickupLocationState extends State<PickupLocation> {
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  Future<void> goToPlace(Map<String, dynamic> place) async {
+    final double lat = place['geometry']['location']['lat'];
+    final double lng = place['geometry']['location']['lng'];
+    final GoogleMapController controller = await _controller.future;
+    controller.animateCamera(
+      CameraUpdate.newCameraPosition(
+        CameraPosition(target: LatLng(lat, lng), zoom: 12),
       ),
     );
   }
