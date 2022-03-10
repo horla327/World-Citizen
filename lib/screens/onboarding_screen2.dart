@@ -1,8 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'signup_form.dart';
-import 'NormalButton.dart';
+import '../signup_form.dart';
+import '../widgets/NormalButton.dart';
 
 class OnboardingPage extends StatelessWidget {
   static const String id = 'onboarding_page';

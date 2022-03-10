@@ -1,8 +1,8 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:worldcitizen/NormalButton.dart';
-import 'package:worldcitizen/donate_nearby.dart';
+import 'package:worldcitizen/widgets/NormalButton.dart';
+import 'package:worldcitizen/screens/donate_nearby.dart';
 import 'package:worldcitizen/welcome_page.dart';
 
 import 'donate_nearby2.dart';

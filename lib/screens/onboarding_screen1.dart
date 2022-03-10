@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, unnecessary_const, prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:worldcitizen/onboarding_screen2.dart';
+import 'package:worldcitizen/screens/onboarding_screen2.dart';
 
 class OnboardingScreen extends StatelessWidget {
   static const String id = 'onboarding_screen';

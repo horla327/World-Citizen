@@ -1,9 +1,9 @@
 // ignore_for_file: prefer_const_constructors, import_of_legacy_library_into_null_safe
 
 import 'package:flutter/material.dart';
-import 'package:worldcitizen/welcome_page.dart';
-import 'textbox.dart';
-import 'NormalButton.dart';
+import 'package:worldcitizen/screens/welcome_page.dart';
+import 'package:worldcitizen/widgets/textbox.dart';
+import 'package:worldcitizen/widgets/NormalButton.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
 
 class SignUp extends StatefulWidget {

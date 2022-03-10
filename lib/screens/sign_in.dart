@@ -4,10 +4,10 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:worldcitizen/ResetScreen.dart';
 import 'package:worldcitizen/donation_channel.dart';
-import 'NormalButton.dart';
+import 'package:worldcitizen/widgets/NormalButton.dart';
 import 'signup_form.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'textbox.dart';
+import 'package:worldcitizen/widgets/textbox.dart';
 
 class SignInForm extends StatefulWidget {
   static const String id = 'sign_in_form';

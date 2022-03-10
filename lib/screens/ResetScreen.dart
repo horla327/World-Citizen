@@ -2,9 +2,9 @@
 
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:worldcitizen/NormalButton.dart';
+import 'package:worldcitizen/widgets/NormalButton.dart';
 import 'package:worldcitizen/sign_in.dart';
-import 'package:worldcitizen/textbox.dart';
+import 'package:worldcitizen/widgets/textbox.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class ResetScreen extends StatefulWidget {

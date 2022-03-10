@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:worldcitizen/location_service.dart';
 import 'package:worldcitizen/pickup_details.dart';
-import 'NormalButton.dart';
+import 'package:worldcitizen/widgets/NormalButton.dart';
 import 'donation_channel.dart';
 import 'package:http/http.dart' as http;
 

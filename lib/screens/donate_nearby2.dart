@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:worldcitizen/NormalButton.dart';
+import 'package:worldcitizen/widgets/NormalButton.dart';
 import 'donation_channel.dart';
 
 class DonateNearbyRate extends StatelessWidget {

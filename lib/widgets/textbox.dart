@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'constants.dart';
+import '../screens/constants.dart';
 import 'app_styles.dart';
 
 class TextInputWidget extends StatelessWidget {

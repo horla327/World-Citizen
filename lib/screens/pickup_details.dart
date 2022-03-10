@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'confirm_pickupdetails.dart';
-import 'NormalButton.dart';
+import 'package:worldcitizen/widgets/NormalButton.dart';
 import 'pickup_location.dart';
 
 class PickUpDetails extends StatelessWidget {

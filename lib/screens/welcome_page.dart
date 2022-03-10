@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:worldcitizen/donation_channel.dart';
-import 'NormalButton.dart';
+import 'package:worldcitizen/widgets/NormalButton.dart';
 import 'signup2.dart';
 
 class WelcomePage extends StatefulWidget {
