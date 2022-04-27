@@ -2,7 +2,7 @@
 
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:worldcitizen/ResetScreen.dart';
+import 'package:worldcitizen/screens/ResetScreen.dart';
 import 'package:worldcitizen/donation_channel.dart';
 import 'package:worldcitizen/widgets/NormalButton.dart';
 import 'signup_form.dart';

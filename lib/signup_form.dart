@@ -3,12 +3,13 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:worldcitizen/screens/sign_in.dart';
-import 'package:worldcitizen/widgets/NormalButton.dart';
-import 'signup2.dart';
+import 'widgets/NormalButton.dart';
+import 'screens/signup2.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
-import 'package:worldcitizen/widgets/textbox.dart';
+import 'screens/sign_in.dart';
+import 'widgets/textbox.dart';
 
 class SignUpForm extends StatefulWidget {
   static const String id = 'sign_up_form';

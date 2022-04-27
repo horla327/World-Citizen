@@ -2,8 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:worldcitizen/widgets/NormalButton.dart';
-import 'package:worldcitizen/donate_nearby2.dart';
-import 'package:worldcitizen/pickup_details.dart';
+import 'package:worldcitizen/screens/donate_nearby2.dart';
+import 'package:worldcitizen/screens/pickup_details.dart';
 
 class ConfirmPickUpDetails extends StatelessWidget {
   static const String id = 'confirm_pickup_details';

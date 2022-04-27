@@ -5,7 +5,7 @@ import 'package:worldcitizen/widgets/NormalButton.dart';
 import 'package:worldcitizen/screens/donate_nearby.dart';
 import 'package:worldcitizen/screens/welcome_page.dart';
 
-import 'donate_nearby2.dart';
+import 'screens/donate_nearby2.dart';
 import 'pickup_location.dart';
 
 class DonationChannel extends StatefulWidget {
